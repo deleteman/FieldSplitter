@@ -1,0 +1,115 @@
+<html>
+<head>
+	<title>Field splitter plugin - Demo page</title>
+	<script type="text/javascript" src="jquery.js" ></script>
+	<script type="text/javascript" src="field-splitter.js" ></script>
+
+	<script type="text/javascript"  >
+		$(document).ready(function() {
+			$("#test").fieldSplit();	
+			$("#test2").fieldSplit({glue:"/",
+														maxLength:2,
+														numberOfFields:2,
+														defaultValue:"__"});	
+			$("#test3").fieldSplit({glue:"/",
+														maxLength:function(i) { return (i < 3)?2:4; },
+														numberOfFields:3,
+														defaultValue:function(i) { return (i< 3)?"__":"____"; }
+
+			});	
+$(".show-code").click(function() {
+				$(this).parent().prev().toggle();
+				return false;
+			});
+
+		});
+	</script>
+  <style type="text/css">
+		* { font-family: "Lucida Sans Unicode","Lucida Grande",Verdana,Arial,Helvetica,sans-serif; color:#333;}
+		#main-wrapper {
+			width:70%;
+			margin:0 auto;
+		}
+
+		h3 { color: #999; border-bottom:2px solid #999;}
+
+		.footer {
+			padding:10px;
+		}
+		.footer b{
+			font-size:11px;
+		}
+
+		.demo_boxes .demo {
+			padding:10px;
+			border-bottom: 3px dashed #999;
+		}
+		.demo p {
+			color:#333;
+		}
+
+		.part1, .part2, .part3 {
+			color:#aaa;
+		}
+
+		.part1.active, .part2.active, .part3.active {
+			color:black;
+		}
+
+		.code { display: none;
+			background-color:#999;
+			padding:5px;
+			font-size:12px;
+		 }
+
+		.method { font-weight:bold;}
+		.option { color:white;}
+
+		input { width:80px;}
+	</style>
+
+</head>
+
+<body>
+<div id="main-wrapper">
+<h1>Field Splitter plugin v0.1</h1>
+<h3>Demo page for the plugin</h3>
+
+<div class="demo_boxes">
+	<div class="demo">
+		<p>Basic example, using all default values </p>
+		<b>Example #1: </b><input type="text" id="test"/>
+		<div class="code"><p>
+			$("#test").<span class="method">fieldSplit</span>();	
+		</p></div>
+		<div class="result"><a href="#" class="show-code" >Toggle js code</a></div>
+	</div>
+	<div class="demo">
+		<p>Example #2, some static configuration</p>
+		<b>Example #2: </b><input type="text" id="test2"/>
+		<div class="code"><p>
+			$("#test2").<span class="method">fieldSplit</span>({<span class="option">glue</span>:"/",
+														<span class="option">maxLength</span>:2,
+														<span class="option">numberOfFields</span>:2,
+														<span class="option">defaultValue</span>:"__"});	
+
+		</p></div>
+		<div class="result"><a href="#" class="show-code">Toggle js code</a></div>
+	</div>
+
+	<div class="demo">
+		<p>Dynamic example. Using functions instead of static values for some of the configuration options</p>
+		<b>Example #3: </b><input type="text" id="test3"/>
+		<div class="code">
+				$("#test3").<span class="method">fieldSplit</span>({<span class="option">glue</span>:"/",
+														<span class="option">maxLength</span>:function(i) { return (i &lt; 3)?2:4; },
+														<span class="option">numberOfFields</span>:3,
+														<span class="option">defaultValue</span>:function(i) { return (i &lt; 3)?"__":"____"; }});
+		</div>
+		<div class="result"><a href="#" class="show-code">Toggle js code</a></div>
+	</div>
+</div>
+<div class="footer">
+	<span class="contact">Contact the author: <b>deleteman@gmail.com</b></span>
+</body>
+</html>
