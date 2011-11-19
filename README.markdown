@@ -3,10 +3,10 @@
 
 With a single method call, turn a single input field, into a multi-field input. This new field has the following features:
 
-* Default value: Allowing for inline labels
-* Auto blur/focus: When the users enters maxlength characters into one of the fields, the focus is automatically changed into the next field.
-* Glue string: Used when joining the values of partial fields
-* 
+* __Default value__: Allowing for inline labels
+* __Auto blur/focus__: When the users enters maxlength characters into one of the fields, the focus is automatically changed into the next field.
+* __Glue string__: Used when joining the values of partial fields
+* __Gracefull degradation__: If no JS is enabled, then the original input field is used.
 
 # How to use?
 
