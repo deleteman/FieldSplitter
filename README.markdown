@@ -8,10 +8,15 @@ With a single method call, turn a single input field, into a multi-field input. 
 * __Glue string__: Used when joining the values of partial fields
 * __Gracefull degradation__: If no JS is enabled, then the original input field is used.
 
-# How to use?
+# How do I get the value from all those new fields?
 
-Installation is simple, just include the JS file just like you would with anyother.
-After installing, just use the method **fieldSplit**
+You don't! The plugin updates the original field while keeping it hidden, that way you can include the plugin into an already created form without having to change 
+the way you send the information.
+
+# How to use it?
+
+Installation is simple, just include the JS file just like you would with any other.
+After including it, just use the method **fieldSplit** with any combination of the options listed below.
 
 # Configuration options
 
@@ -30,12 +35,12 @@ Here are some basic code examples:
 
 Using some of the configuration options:
 
-`$("#test2").fieldSplit({glue:"/", maxLength:2, numberOfFields:2, defaultValue:"__"});`
+```js$("#test2").fieldSplit({glue:"/", maxLength:2, numberOfFields:2, defaultValue:"__"});```
 
 
 Now using some anonymous functions instead of static values as configuration options:
 
-`$("#test3").fieldSplit({glue:"/", maxLength:function(i) { return (i < 3)?2:4; }, numberOfFields:3, defaultValue:function(i) { return (i < 3)?"__":"____"; }});`
+```js$("#test3").fieldSplit({glue:"/", maxLength:function(i) { return (i < 3)?2:4; }, numberOfFields:3, defaultValue:function(i) { return (i < 3)?"__":"____"; }});```
  
 # Contact me
 
