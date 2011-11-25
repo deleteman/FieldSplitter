@@ -36,13 +36,25 @@ Here are some basic code examples:
 Using some of the configuration options:
 
 ```js
-$("#test2").fieldSplit({glue:"/", maxLength:2, numberOfFields:2, defaultValue:"__"});```
+$("#test2").fieldSplit({
+	glue:"/", 
+	maxLength:2, 
+	numberOfFields:2, 
+	defaultValue:"__"
+});
+```
 
 
 Now using some anonymous functions instead of static values as configuration options:
 
-```javascript
-$("#test3").fieldSplit({glue:"/", maxLength:function(i) { return (i < 3)?2:4; }, numberOfFields:3, defaultValue:function(i) { return (i < 3)?"__":"____"; }});```
+```js
+$("#test3").fieldSplit({
+	glue:"/", 
+	maxLength:function(i) { return (i < 3)?2:4; }, 
+	numberOfFields:3, 
+	defaultValue:function(i) { return (i < 3)?"__":"____"; } //The default value changes, to show how many characters the usre can enter
+});
+```
  
 # Contact me
 
