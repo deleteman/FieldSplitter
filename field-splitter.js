@@ -34,7 +34,10 @@
 	
 		this.hide(); //hide the original element, it'll be updated anyways, in order to send it when posting the form
 		var originalElement = this;
-	  var container = this.parent();
+
+	  var container = $('<div class="multi-field"></div>');
+	  this.parent().append(container);
+
 
 
 		default_value = (typeof options.defaultValue 	 != "undefined")?options.defaultValue  :DEFAULT_VALUE;
