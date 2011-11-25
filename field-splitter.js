@@ -4,6 +4,8 @@
 /**
  * Field Splitter plugin v 0.1
  *
+ * Created by: Fernando Doglio (deleteman@gmail.com)
+ *
  * Allows the programmer to turn a single input field into a multi field input. 
  *
  * The plugin's default behavior can be configured with an options hash:
@@ -49,8 +51,9 @@
 			fieldId = $(elem).attr("id");
 
 			var currentElement = originalElement;
-			for(var idx = 1; idx <= nmbr_fields; idx++) {
-				var lastField = idx == nmbr_fields;
+			var max_nmbr_fields = (typeof nmbr_fields == "function")?nmbr_fields():nmbr_fields;
+			for(var idx = 1; idx <= max_nmbr_fields; idx++) {
+				var lastField = idx == max_nmbr_fields;
 				createPartField(fieldId, default_value, idx, max_length, container, lastField);
 			}
 		});
