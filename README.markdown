@@ -35,12 +35,14 @@ Here are some basic code examples:
 
 Using some of the configuration options:
 
-```js$("#test2").fieldSplit({glue:"/", maxLength:2, numberOfFields:2, defaultValue:"__"});```
+```js
+$("#test2").fieldSplit({glue:"/", maxLength:2, numberOfFields:2, defaultValue:"__"});```
 
 
 Now using some anonymous functions instead of static values as configuration options:
 
-```js$("#test3").fieldSplit({glue:"/", maxLength:function(i) { return (i < 3)?2:4; }, numberOfFields:3, defaultValue:function(i) { return (i < 3)?"__":"____"; }});```
+```javascript
+$("#test3").fieldSplit({glue:"/", maxLength:function(i) { return (i < 3)?2:4; }, numberOfFields:3, defaultValue:function(i) { return (i < 3)?"__":"____"; }});```
  
 # Contact me
 
