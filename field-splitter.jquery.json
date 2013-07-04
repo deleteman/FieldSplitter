@@ -1,0 +1,26 @@
+{
+	"name": "field-splitter",
+	"version": "0.1.0",
+	"title":"Field Splitter",
+	"author": {
+		"name": "deleteman",
+		"email": "deleteman@gmail.com",
+		"url": "http://github.com/deleteman"
+	},
+	"licenses":[
+		{	
+			"type": "MIT",
+			"url": "http://opensource.org/licenses/MIT"
+		}
+	],
+	"dependencies": {
+		"jquery": ">=1.7"
+	},
+	"keywords": [
+		"form",
+		"fields",
+		"split"
+	],
+	"homepage": "http://github.com/deleteman/FieldSplitter"
+
+}
