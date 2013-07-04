@@ -1,7 +1,8 @@
 {
 	"name": "field-splitter",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"title":"Field Splitter",
+	"description": "With a single method call, turn a single input field, into a multi-field input. This new field has the following features",
 	"author": {
 		"name": "deleteman",
 		"email": "deleteman@gmail.com",
