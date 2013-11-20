@@ -7,17 +7,19 @@
 	<script type="text/javascript"  >
 		$(document).ready(function() {
 			$("#test").fieldSplit();	
-			$("#test2").fieldSplit({glue:"/",
-														maxLength:2,
-														numberOfFields:2,
-														defaultValue:"__"});	
-			$("#test3").fieldSplit({glue:"/",
-														maxLength:function(i) { return (i < 3)?2:4; },
-														numberOfFields:3,
-														defaultValue:function(i) { return (i< 3)?"__":"____"; }
-
+			$("#test2").fieldSplit({
+				glue:"/",
+				maxLength:2,
+				numberOfFields:2,
+				defaultValue:"__"
 			});	
-$(".show-code").click(function() {
+			$("#test3").fieldSplit({
+				glue:"/",
+				maxLength:function(i) { return (i < 3)?2:4; },
+				numberOfFields:3,
+				defaultValue:function(i) { return (i< 3)?"__":"____"; }
+			});	
+			$(".show-code").click(function() {
 				$(this).parent().prev().toggle();
 				return false;
 			});
@@ -88,10 +90,12 @@ $(".show-code").click(function() {
 		<p>Example #2, some static configuration</p>
 		<b>Example #2: </b><input type="text" id="test2"/>
 		<div class="code"><p>
-			$("#test2").<span class="method">fieldSplit</span>({<span class="option">glue</span>:"/",
-														<span class="option">maxLength</span>:2,
-														<span class="option">numberOfFields</span>:2,
-														<span class="option">defaultValue</span>:"__"});	
+			$("#test2").<span class="method">fieldSplit</span>({
+				<span class="option">glue</span>:"/",
+				<span class="option">maxLength</span>:2,
+				<span class="option">numberOfFields</span>:2,
+				<span class="option">defaultValue</span>:"__"
+			});	
 
 		</p></div>
 		<div class="result"><a href="#" class="show-code">Toggle js code</a></div>
@@ -101,10 +105,12 @@ $(".show-code").click(function() {
 		<p>Dynamic example. Using functions instead of static values for some of the configuration options</p>
 		<b>Example #3: </b><input type="text" id="test3"/>
 		<div class="code">
-				$("#test3").<span class="method">fieldSplit</span>({<span class="option">glue</span>:"/",
-														<span class="option">maxLength</span>:function(i) { return (i &lt; 3)?2:4; },
-														<span class="option">numberOfFields</span>:3,
-														<span class="option">defaultValue</span>:function(i) { return (i &lt; 3)?"__":"____"; }});
+			$("#test3").<span class="method">fieldSplit</span>({
+				<span class="option">glue</span>:"/",
+				<span class="option">maxLength</span>:function(i) { return (i &lt; 3)?2:4; },
+				<span class="option">numberOfFields</span>:3,
+				<span class="option">defaultValue</span>:function(i) { return (i &lt; 3)?"__":"____"; }
+			});
 		</div>
 		<div class="result"><a href="#" class="show-code">Toggle js code</a></div>
 	</div>
