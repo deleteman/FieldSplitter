@@ -2,7 +2,7 @@
 
 
 /**
- * Field Splitter plugin v 0.1
+ * Field Splitter plugin v 0.1.2
  *
  * Created by: Fernando Doglio (deleteman@gmail.com)
  *
@@ -53,21 +53,20 @@
 		return this.each(function(i, elem){
 			fieldId = $(elem).attr("id");
 
-			var currentElement = originalElement;
 			var max_nmbr_fields = (typeof nmbr_fields == "function")?nmbr_fields():nmbr_fields;
 			for(var idx = 1; idx <= max_nmbr_fields; idx++) {
 				var lastField = idx == max_nmbr_fields;
-				createPartField(fieldId, default_value, idx, max_length, container, lastField);
+				createPartField($(originalElement).attr("type"), fieldId, default_value, idx, max_length, container, lastField);
 			}
 		});
 
 
 		/** Function that creates a "partial" field **/
-		function createPartField(fieldId, default_value, idx, max_length, container, lastField){
+		function createPartField(type, fieldId, default_value, idx, max_length, container, lastField){
 					var maxL 		 = (typeof max_length == "function")?max_length(idx):max_length;
 					var defValue = (typeof default_value == "function")?default_value(idx):default_value;
 
-					new_part_field = $('<input type="text" id="' + fieldId + '_part' + idx + '" class="class_for_' + fieldId + ' part' + idx +'" maxlength = "' + maxL + '" />');
+					new_part_field = $('<input type="' + type + '" id="' + fieldId + '_part' + idx + '" class="class_for_' + fieldId + ' part' + idx +'" maxlength = "' + maxL + '" />');
 					container.append(new_part_field);
 					if(!lastField) {
 				  	container.append(glue);
